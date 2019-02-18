@@ -17,6 +17,22 @@ public class Note {
         this.priority = priority;
     }
 
+    public Note() {
+
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
+
     public void setId(int id) {
         this.id = id;
     }

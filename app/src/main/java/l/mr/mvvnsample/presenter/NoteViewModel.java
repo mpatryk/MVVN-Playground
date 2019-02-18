@@ -1,4 +1,4 @@
-package l.mr.mvvnsample;
+package l.mr.mvvnsample.presenter;
 
 import android.app.Application;
 
@@ -7,6 +7,10 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+import l.mr.data2.entity.Note;
+import l.mr.data2.repository.NoteRepositoryImp;
+import l.mr.domain.repository.NoteRepository;
+import l.mr.mvvnsample.presenter.mapper.NoteMapper;
 
 public class NoteViewModel extends AndroidViewModel {
     private NoteRepository repository;
@@ -14,20 +18,20 @@ public class NoteViewModel extends AndroidViewModel {
 
     public NoteViewModel(@NonNull Application application) {
         super(application);
-        repository = new NoteRepository(application);
-        allNotes = repository.getAllNotes();
+        repository = new NoteRepositoryImp(application);
+        allNotes = (LiveData<List<Note>>) repository.getAllNotes();
     }
 
     public void insert(Note note) {
-        repository.insert(note);
+        repository.insert(NoteMapper.map(note));
     }
 
     public void update(Note note) {
-        repository.update(note);
+        repository.update(NoteMapper.map(note));
     }
 
     public void delete(Note note) {
-        repository.delete(note);
+        repository.delete(NoteMapper.map(note));
     }
 
     public void deleteAllNotes() {

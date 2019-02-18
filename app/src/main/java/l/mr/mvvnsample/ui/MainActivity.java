@@ -1,4 +1,4 @@
-package l.mr.mvvnsample;
+package l.mr.mvvnsample.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,6 +21,10 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import l.mr.data2.entity.Note;
+import l.mr.mvvnsample.R;
+import l.mr.mvvnsample.presenter.NoteViewModel;
 
 public class MainActivity extends AppCompatActivity {
     public static final int ADD_NOTE_REQUEST = 1;

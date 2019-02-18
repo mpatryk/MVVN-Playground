@@ -6,6 +6,10 @@ public class Note {
     private String description;
     private int priority;
 
+    public Note() {
+
+    }
+
     public Note(String title, String description, int priority) {
         this.title = title;
         this.description = description;
@@ -14,6 +18,18 @@ public class Note {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
     }
 
     public int getId() {

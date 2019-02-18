@@ -1,4 +1,4 @@
-package l.mr.mvvnsample;
+package l.mr.mvvnsample.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import java.util.Objects;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatSeekBar;
+import l.mr.mvvnsample.R;
 
 public class AddEditNoteActivity extends AppCompatActivity {
 
