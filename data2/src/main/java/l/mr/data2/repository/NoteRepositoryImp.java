@@ -29,12 +29,12 @@ public class NoteRepositoryImp implements NoteRepository<LiveData<List<l.mr.data
 
     @Override
     public void update(Note note) {
-
+        new UpdateNoteAsyncTask(noteDao).execute(NoteMapper.mapToLive(note));
     }
 
     @Override
     public void delete(Note note) {
-
+        new DeleteNoteAsyncTask(noteDao).execute(NoteMapper.mapToLive(note));
     }
 
     @Override
@@ -61,6 +61,32 @@ public class NoteRepositoryImp implements NoteRepository<LiveData<List<l.mr.data
         }
     }
 
+    private static class UpdateNoteAsyncTask extends AsyncTask<l.mr.data2.entity.Note, Void, Void> {
+        private NoteDAO noteDao;
+        private UpdateNoteAsyncTask(NoteDAO noteDao) {
+            this.noteDao = noteDao;
+        }
+
+        @Override
+        protected Void doInBackground(l.mr.data2.entity.Note... notes) {
+            noteDao.update(notes[0]);
+            return null;
+        }
+    }
+
+    private static class DeleteNoteAsyncTask extends AsyncTask<l.mr.data2.entity.Note, Void, Void> {
+        private NoteDAO noteDao;
+        private DeleteNoteAsyncTask(NoteDAO noteDao) {
+            this.noteDao = noteDao;
+        }
+
+        @Override
+        protected Void doInBackground(l.mr.data2.entity.Note... notes) {
+            noteDao.delete(notes[0]);
+            return null;
+        }
+    }
+
     private static class InsertNoteAsyncTask extends AsyncTask<l.mr.data2.entity.Note, Void, Void> {
         private NoteDAO noteDao;
         private InsertNoteAsyncTask(NoteDAO noteDao) {
@@ -73,6 +99,7 @@ public class NoteRepositoryImp implements NoteRepository<LiveData<List<l.mr.data
             return null;
         }
     }
+
 
 
 }
