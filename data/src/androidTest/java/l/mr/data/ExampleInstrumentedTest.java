@@ -1,4 +1,4 @@
-package l.mr.data2;
+package l.mr.data;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

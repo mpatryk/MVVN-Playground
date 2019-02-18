@@ -1,4 +1,4 @@
-package l.mr.data2.entity;
+package l.mr.data.entity;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

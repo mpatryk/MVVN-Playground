@@ -1,4 +1,4 @@
-package l.mr.data2;
+package l.mr.data;
 
 import org.junit.Test;
 

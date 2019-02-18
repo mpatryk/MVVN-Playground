@@ -1,4 +1,4 @@
-package l.mr.data2.database;
+package l.mr.data.database;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
-import l.mr.data2.entity.Note;
+import l.mr.data.entity.Note;
 
 @Dao
 public interface NoteDAO {

@@ -7,8 +7,8 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import l.mr.data2.entity.Note;
-import l.mr.data2.repository.NoteRepositoryImp;
+import l.mr.data.entity.Note;
+import l.mr.data.repository.NoteRepositoryImp;
 import l.mr.domain.repository.NoteRepository;
 import l.mr.mvvnsample.presenter.mapper.NoteMapper;
 
